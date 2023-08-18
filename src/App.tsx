@@ -22,7 +22,7 @@ function App() {
             <Space direction="vertical">
                 <Input.Password id={"password"} placeholder="input password"/>
             </Space>
-            <Button id={"okButton0"} type="primary" size={size}
+            <Button id={"okButton"} type="primary" size={size}
                     onClick={info}
             >OK</Button>
         </Card>
