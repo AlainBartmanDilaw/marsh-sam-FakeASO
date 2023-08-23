@@ -9,7 +9,7 @@ function App() {
     const info = () => {
         if (passwordValue !== "Marsh2023") {
             messageApi.open({
-                    content: 'Incorect password!',
+                    content: 'Incorrect password!',
                     type: 'error',
                     duration: 10
                 }
