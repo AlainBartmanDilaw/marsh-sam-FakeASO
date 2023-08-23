@@ -86,7 +86,7 @@ function App() {
                     <Button id={"clearButton"} type="primary" onClick={clearClick}>Clear</Button>
                     <Button id={"applyButton"} type="primary" onClick={applyClick}>Apply</Button>
                 </Space>
-                <a id="download-Link" className={x²linkCache} href = "http://localhost:3000/file1.txt">Mon fichier</a>
+                <a id="download-Link" className={linkCache} href = "http://localhost:3000/file1.txt">Mon fichier</a>
             </Space>
 
         </Space>
