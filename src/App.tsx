@@ -2,8 +2,11 @@ import { Button, Card, Input, message, Radio, RadioChangeEvent, Space } from 'an
 import React, { useState } from 'react';
 import './App.css';
 
-
 function App() {
+
+    const queryParameters = new URLSearchParams(window.location.search)
+    const file = queryParameters.get("file") ?? ""
+
     const [ messageApi, contextHolder ] = message.useMessage();
 
     const info = () => {
@@ -85,7 +88,12 @@ function App() {
                     <Button id={"clearButton"} type="primary" onClick={clearClick}>Clear</Button>
                     <Button id={"applyButton"} type="primary" onClick={applyClick}>Apply</Button>
                 </Space>
-                <a id="download-Link" className={linkCache} href = "http://localhost:3000/file1.txt">Mon fichier</a>
+            </Space>
+            <a id="download-Link" className={linkCache} href={file} target={"_blank"} rel={"noreferrer"} download>
+                Mon fichier = {file}
+            </a>
+            <Space>
+
             </Space>
 
         </Space>
