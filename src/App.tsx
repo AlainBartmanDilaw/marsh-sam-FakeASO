@@ -67,37 +67,48 @@ function App() {
         }, 3000);
     }
 
-    return <Card style={{width: 600}}>
-        {contextHolder}
-        <Space direction={"horizontal"}>
+    if (file === "") {
+        return <body>
+        <h1>Paramètre manquant : file</h1>
+        <h2>Exemple d'adresse <a
+            href={"http://localhost:3001/?file=file11007.csv"}>http://localhost:3001/?file=file11007.csv</a>
+        </h2>
+        </body>
+    } else {
 
-            <Space direction="vertical">
-                <Input.Password id={"password"} placeholder="input password"
-                                onChange={(e) => setPassword(e.target.value)}/>
-                <Button id={"okButton"} type="primary"
-                        onClick={info}>OK</Button>
-            </Space>
+        return <Card style={{width: 600}}>
+            {contextHolder}
+            <Space direction={"horizontal"}>
 
-            <Space direction={"vertical"} className={cache}>
-                Select Dates
-                <Radio.Group onChange={onChangeRadio} value={value}>
-                    <Radio value={1}>All</Radio>
-                    <Radio value={2}>Custom</Radio>
-                </Radio.Group>
-                <Space direction={"horizontal"}>
-                    <Button id={"clearButton"} type="primary" onClick={clearClick}>Clear</Button>
-                    <Button id={"applyButton"} type="primary" onClick={applyClick}>Apply</Button>
+                <Space direction="vertical">
+                    <Input.Password id={"password"} placeholder="input password"
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                    <Button id={"okButton"} type="primary"
+                            onClick={info}>OK</Button>
                 </Space>
-            </Space>
-            <a id="download-Link" className={linkCache} href={file} target={"_blank"} rel={"noreferrer"} download>
-                Mon fichier = {file}
-            </a>
-            <Space>
+
+                <Space direction={"vertical"} className={cache}>
+                    Select Dates
+                    <Radio.Group onChange={onChangeRadio} value={value}>
+                        <Radio value={1}>All</Radio>
+                        <Radio value={2}>Custom</Radio>
+                    </Radio.Group>
+                    <Space direction={"horizontal"}>
+                        <Button id={"clearButton"} type="primary" onClick={clearClick}>Clear</Button>
+                        <Button id={"applyButton"} type="primary" onClick={applyClick}>Apply</Button>
+                    </Space>
+                </Space>
+                <a id="download-Link" className={linkCache} href={file} target={"_blank"} rel={"noreferrer"} download>
+                    Mon fichier = {file}
+                </a>
+                <Space>
+
+                </Space>
 
             </Space>
+        </Card>;
+    }
 
-        </Space>
-    </Card>;
 }
 
 export default App;
